@@ -7,7 +7,8 @@ class MailsController extends AppController
   public $helpers = array('Html', 'Form');
 
   /**
-   * Método em branco, renderiza formulário estático de contato
+   * Quando get, renderiza formulário estático de contato,
+   * em post, envia mensagem do fale conosco
    */
   public function index()
   {
@@ -19,5 +20,7 @@ class MailsController extends AppController
           $this->Session->setFlash('Mensagem enviada com sucesso!');
     }
   }
+
+
 }
 ?>

@@ -1,4 +1,8 @@
-<?php echo $this->$Html->link('Fale conosco', array('controller' => 'mails', 'action' => 'index')); ?>
+<ul class="menu">
+  <li><?php echo $this->Html->link('Fale conosco', array('controller' => 'mails', 'action' => 'index')); ?></li>
+  <li><?php echo $this->Html->link('Esqueceu sua senha?', array('controller' => 'reset_tokens', 'action' => 'index')); ?></li>
+</ul>
+
 
 <h1>Todos os Posts</h1>
 

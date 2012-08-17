@@ -45,8 +45,8 @@ class EmailConfig {
   public $default = array(
     'host' => 'smtpcorp.com',
     'port' => 2525,
-    'username' => 'paolobueno',
-    'password' => 'Senai115',
+    'username' => 'cakeblog',
+    'password' => 'senai123',
     'transport' => 'Smtp'
   );
 

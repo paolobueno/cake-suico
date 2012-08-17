@@ -25,7 +25,7 @@ class UsersController extends AppController {
   public function beforeFilter()
   {
     parent::beforeFilter();
-    $this->Auth->allow('add'); // deixar usuários não autenticados se cadastrarem
+    $this->Auth->allow('add', 'reset'); // deixar usuários não autenticados se cadastrarem
   }
 
   public function login()

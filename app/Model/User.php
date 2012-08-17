@@ -5,7 +5,12 @@
 */
 class User extends AppModel
 {
-  public $hasMany = array('Posts');
+  public $hasMany = array(
+    'Posts',
+    'ResetTokens' => array(
+      'conditions' => array('spent' => 0)
+    )
+  );
 
   public $validate = array(
     'username' => array(
@@ -24,6 +29,9 @@ class User extends AppModel
       'rule' => array('inList', array('admin', 'author')),
       'message' => 'Por favor entre com uma função válida',
       'allowEmpty' => false
+    ),
+    'email' => array(
+      'rule' => 'email'
     )
   );
 

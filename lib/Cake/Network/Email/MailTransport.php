@@ -43,10 +43,10 @@ class MailTransport extends AbstractTransport {
 		$message = implode($eol, $email->message());
 		if (ini_get('safe_mode') || !isset($this->_config['additionalParameters'])) {
 			if (!@mail($to, $email->subject(), $message, $headers)) {
-				throw new SocketException(__d('cake_dev', 'Could not send email.'));
+				throw new SocketException(__d('cake_dev', 'Could not send email1.'));
 			}
 		} elseif (!@mail($to, $email->subject(), $message, $headers, $this->_config['additionalParameters'])) {
-			throw new SocketException(__d('cake_dev', 'Could not send email.'));
+			throw new SocketException(__d('cake_dev', 'Could not send email2.'));
 		}
 		return array('headers' => $headers, 'message' => $message);
 	}
