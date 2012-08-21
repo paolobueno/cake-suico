@@ -5,9 +5,12 @@
 */
 class User extends AppModel
 {
+  // Array que configura relação entre User e outros modelos
   public $hasMany = array(
     'Posts',
     'ResetTokens' => array(
+      // aqui estipulamos a condição de normalmente trazermos
+      // somente ResetTokens que não estão gastos
       'conditions' => array('spent' => 0)
     )
   );
