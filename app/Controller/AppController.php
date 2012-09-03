@@ -47,7 +47,7 @@ class AppController extends Controller {
 
     // Declarando o SessionComponent aqui, tiramos a necessidade de
     // repetir isso nos Controllers
-    'Session'
+      'Session'
   );
 
   /**
