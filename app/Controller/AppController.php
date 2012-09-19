@@ -83,4 +83,9 @@ class AppController extends Controller {
   {
     $this->Auth->allow('index', 'view');
   }
+
+  public function find($value='')
+  {
+    # code...
+  }
 }

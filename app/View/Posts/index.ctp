@@ -1,12 +1,6 @@
-<ul class="menu">
-  <li><?php echo $this->Html->link('Fale conosco', array('controller' => 'mails', 'action' => 'index')); ?></li>
-  <li><?php echo $this->Html->link('Esqueceu sua senha?', array('controller' => 'reset_tokens', 'action' => 'index')); ?></li>
-</ul>
-
-
 <h1>Todos os Posts</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <td>Id</td>
     <td>Titulo</td>
@@ -23,9 +17,13 @@
       <?php echo $this->Form->postLink(
           'Apagar',
           array('action' => 'delete', $post['Post']['id']),
-          array('confirm' => "Tem certeza que deseja apagar o post #$postid?")
+          array(
+            'confirm' => "Tem certeza que deseja apagar o post #$postid?",
+            'class' => 'btn btn-danger'
+          )
         ); ?>
-      <?php echo $this->Html->link('Editar', array('controller' => 'Posts', 'action' => 'edit', $postid)); ?>
+      <?php echo $this->Html->link('Editar', array('controller' => 'Posts', 'action' => 'edit', $postid),
+        array('class' => 'btn')); ?>
     </td>
     <td><?php echo $post['Post']['created']; ?></td>
   </tr>

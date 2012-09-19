@@ -1,0 +1,10 @@
+#Up
+CREATE TABLE categories(
+  id INT(11) AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(30),
+  created DATETIME DEFAULT NULL,
+  modified DATETIME DEFAULT NULL
+);
+
+#Down
+# DROP TABLE categories

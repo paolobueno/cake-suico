@@ -4,9 +4,14 @@
  */
 class PostsController extends AppController
 {
+  public $uses = array('Post', 'Category');
 
   public function isAuthorized($user)
   {
+    if (parent::isAuthorized($user)) {
+      return true;
+    }
+
     if ($this->action === 'add') {
       return true;
     }
@@ -42,6 +47,8 @@ class PostsController extends AppController
       } else {
         $this->Session->setFlash("Erro no salvamento de seu Post");
       }
+    } elseif ($this->request->is('get')) {
+      $this->set('categories', $this->Category->find('list'));
     }
   }
 
@@ -49,6 +56,7 @@ class PostsController extends AppController
   {
     $this->Post->id = $id;
     if($this->request->is('get')){
+      $this->set('categories', $this->Category->find('list'));
       $this->request->data = $this->Post->read();
     } else {
       if ($this->Post->save($this->request->data)) {
